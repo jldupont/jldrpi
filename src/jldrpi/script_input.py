@@ -24,7 +24,9 @@ def parse_pin_definition(input_list):
     for pindef in input_list:
         try:
             pindef = pindef.lower()
-            pin_number, props = pindef.split(":")
+            pin_number_str, props = pindef.split(":")
+            
+            pin_number = int(pin_number_str)
         except:
             raise Exception("wrong format for entry: %s" % pindef)
             
