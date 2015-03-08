@@ -28,8 +28,8 @@ def parse_pin_definition(input_list):
         except:
             raise Exception("wrong format for entry: %s" % pindef)
             
-        pin = Pin.parse_and_validate(pin_number, props)
-        result.append(pin)
+        pin_number, pull, edge = Pin.parse_and_validate(pin_number, props)
+        result.append(Pin(pin_number, pull, edge))
 
     return result
 
