@@ -10,13 +10,14 @@ class Pin(object):
     EDGE_RISING = 'r'
     EDGE_FALLING = 'f'
     
-    def __init__(self, pin, pull, edge):
-        self.pin = pin
+    def __init__(self, pin_number, pull, edge):
+        
+        self.pin_number = pin_number
         self.pull = pull
         self.edge = edge
         
     @classmethod
-    def parse_and_validate(cls, pin, props):
+    def parse_and_validate(cls, pin_number, props):
         
         pd = cls.PULL_DOWN in props
         pu = cls.PULL_UP in props
@@ -33,5 +34,5 @@ class Pin(object):
         pull = pd and cls.PULL_DOWN   or pu and cls.PULL_UP
         edge = er and cls.EDGE_RISING or ef and cls.EDGE_FALLING
         
-        return (pin, pull, edge)
+        return (pin_number, pull, edge)
 

@@ -30,7 +30,9 @@ def main():
         import jldrpi.do_checks #@UnusedImport
         
         parser=argparse.ArgumentParser(description=DESC, fromfile_prefix_chars='@')
-        parser.add_argument('-p',  dest='pins',  type=str, help="Pin(s) definition", nargs="+", required=True)
+        parser.add_argument('-p',  dest='pins',   type=str, help="Pin(s) definition", nargs="+", required=True)
+        parser.add_argument('-b',  dest='bounce', type=int, help="Debounce time (milliseconds)", default = 200)
+        
         parser.add_argument('-d',  dest='debug', action='store_true', help="Debug Mode", default=False)        
         
         args=parser.parse_args()

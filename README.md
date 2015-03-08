@@ -12,7 +12,7 @@ Raspberry Pi command line tools
 Use the `-p` option to define pin(s).
 
 `jldrpi-input -p 25:FU 26:DR` defines pin 25 with internal pull-up and falling edge detection, pin 26 with pull-down and rising edge detection.
-
+The pins are defined as `GPIO.BCM` i.e. the numbering used on the SoC (System on a Chip).
 
 History
 =======
