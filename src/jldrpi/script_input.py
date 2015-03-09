@@ -49,9 +49,10 @@ def set_pins(pins, bounce):
         edge = gp.FALLING  if pin.edge == Pin.EDGE_FALLING else gp.RISING
         
         pin_number = pin.pin_number
+        
         gp.setup(pin_number, gp.IN, pull_up_down = pull)
         
-        gp.add_event_callback(pin_number, edge, callback = event, bouncetime = bounce)
+        gp.add_event_detect(pin_number, edge, callback = event, bouncetime = bounce)
 
         
         
